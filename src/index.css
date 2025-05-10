@@ -1,0 +1,101 @@
+:root {
+  --color-primary: #4a90e2;
+  --color-secondary: #f5f5f5;
+  --color-danger: #dc3545;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: var(--color-secondary);
+  color: #333;
+}
+
+.App {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.App h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-reminder-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-reminder-form input[type="text"],
+.add-reminder-form input[type="time"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-reminder-form button {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-reminder-form button:hover {
+  background: #407fc4;
+}
+
+.reminder-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.reminder-item .info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reminder-item .info span {
+  font-size: 0.9rem;
+}
+
+.reminder-item .actions button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.reminder-item .actions button.delete {
+  color: var(--color-danger);
+}
+
+@media (max-width: 600px) {
+  .add-reminder-form {
+    flex-direction: column;
+  }
+
+  .add-reminder-form button {
+    width: 100%;
+  }
+}
