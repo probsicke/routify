@@ -42,7 +42,7 @@ export default function SignUp() {
         </section>
       </main>
 
-      <footer className={styles.pageFooter}>
+      <footer className={styles.copyright}>
         © {new Date().getFullYear()} Routify
       </footer>
     </div>

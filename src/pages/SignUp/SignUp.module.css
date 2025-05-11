@@ -35,7 +35,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
   position: relative;
-  margin-top: -2rem;
+  margin-top: 2rem;
 }
 
 .logo {
@@ -68,10 +68,6 @@
   margin-bottom: 1rem;
 }
 
-.banner {
-  margin: 1.5rem 0;
-}
-
 .button {
   width: 100%;
   background: var(--color-blue-aqua);
@@ -83,7 +79,8 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 .button:hover {
@@ -111,10 +108,15 @@
   font-weight: 500;
 }
 
-.pageFooter {
+.copyright {
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   color: var(--color-gray-500);
-  margin: 2rem 0; 
+  margin: 1rem 0;
 }
+
+.form input:last-of-type {
+  margin-bottom: 0.5rem;
+}
+

@@ -4,16 +4,9 @@ import styles from './SignIn.module.css'
 export default function SignIn() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.banner}>
-        <div className={styles.bannerText}>
-          <h2>Bem-vindo(a) !</h2>
-          <p>Faça o login para acessar o Routify.</p>
-        </div>
-      </div>
-
       <main className={styles.main}>
         <section className={styles.card}>
-          <div className={styles.logoCircle}>R</div>
+          <h1 className={styles.logo}>Routify</h1>
 
           <form className={styles.form}>
             <label>E-mail</label>
@@ -33,7 +26,7 @@ export default function SignIn() {
           </form>
 
           <Link to="/forgot-password" className={styles.forgot}>
-             Esqueceu a senha?
+            Esqueceu a senha?
           </Link>
 
           <p className={styles.footerText}>
@@ -43,11 +36,11 @@ export default function SignIn() {
             </Link>
           </p>
 
-          <p className={styles.copyright}>
-            © {new Date().getFullYear()} Routify
-          </p>
         </section>
       </main>
+      <footer className={styles.copyright}>
+        © {new Date().getFullYear()} Routify
+      </footer>
     </div>
   )
 }

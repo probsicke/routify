@@ -15,35 +15,6 @@
   flex-direction: column;
 }
 
-.banner {
-  background: var(--color-gray-100);
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.bannerText {
-  font-family: 'Inter', sans-serif;
-}
-.bannerText h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #212529;
-}
-.bannerText p {
-  margin: 0;
-  color: #495057;
-  font-size: 0.95rem;
-}
-.bannerIllustration {
-  width: 120px;
-  height: 80px;
-  background: var(--color-white);
-  border-radius: 8px;
-}
-
 .main {
   flex: 1;
   display: flex;
@@ -59,24 +30,17 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   position: relative;
-  margin-top: -2rem; 
-}
+  margin-top: 2rem; 
+  flex-direction: column;
+}     
 
-.logoCircle {
-  position: absolute;
-  top: -32px;
-  left: calc(50% - 32px);
-  width: 64px;
-  height: 64px;
-  background: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logo {
   font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-blue-aqua);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #212529;
+  text-align: center;
+  margin: 1rem 0; 
 }
 
 .form {
@@ -89,6 +53,7 @@
   font-size: 0.9rem;
   color: #111;
   margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
 }
 .form input {
   padding: 0.6rem 0.8rem;
@@ -100,12 +65,15 @@
 .form .checkbox {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
+
 .form .checkbox input {
-  margin-right: 0.5rem;
   width: auto;
+  margin: 0;
 }
+
 .form .button {
   width: 100%;
   padding: 0.75rem;
@@ -117,6 +85,7 @@
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .button:hover {
@@ -127,10 +96,11 @@
   display: block;
   text-align: center;
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-gray-500);
   text-decoration: none;
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 .footerText {
@@ -151,5 +121,5 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   color: var(--color-gray-500);
-  margin-top: 2rem;
+  margin: 1rem 0;
 }
