@@ -9,10 +9,11 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
+  gap: 1rem;
 }
 
 .upgrade-banner__text {
-  flex: 0.5;                         
+  flex: none;                         
   text-align: center;
 }
 

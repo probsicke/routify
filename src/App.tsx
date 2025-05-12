@@ -7,6 +7,7 @@ import ReminderList from './components/ReminderList'
 import { Header } from './components/Header/Header'
 import { WeekView } from './components/WeekView/WeekView'
 import UpgradeBanner from './components/UpgradeBanner/UpgradeBanner'
+import UpgradeScreen from './components/UpgradeScreen/UpgradeScreen'
 
 import { Home } from './pages/Home'
 import SignUp from './pages/SignUp/SignUp'
@@ -51,6 +52,7 @@ function App() {
         <Route path="/login" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/semana" element={<WeekView />} />
+        <Route path="/upgrade" element={<UpgradeScreen />} />
 
         <Route
           path="/reminders"
