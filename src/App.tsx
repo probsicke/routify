@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import type { Reminder } from './types'
+
 import AddReminderForm from './components/AddReminderForm'
 import ReminderList from './components/ReminderList'
 import { Header } from './components/Header/Header'
+
 import { Home } from './pages/Home'
 import SignUp from './pages/SignUp/SignUp'
 import SignIn from './pages/SignIn/SignIn'
-import ForgotPassword  from './pages/ForgotPassword/ForgotPassword'
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 
 function App() {
   const [reminders, setReminders] = useState<Reminder[]>(() => {
@@ -19,22 +21,19 @@ function App() {
     localStorage.setItem('reminders', JSON.stringify(reminders))
   }, [reminders])
 
-  const addReminder = (text: string, time: string) => {
+  const addReminder = (text: string, time: string) =>
     setReminders(prev => [
       ...prev,
       { id: Date.now(), text, time, done: false }
     ])
-  }
 
-  const toggleDone = (id: number) => {
+  const toggleDone = (id: number) =>
     setReminders(prev =>
       prev.map(r => (r.id === id ? { ...r, done: !r.done } : r))
     )
-  }
 
-  const deleteReminder = (id: number) => {
+  const deleteReminder = (id: number) =>
     setReminders(prev => prev.filter(r => r.id !== id))
-  }
 
   return (
     <BrowserRouter>
@@ -44,9 +43,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/signup" element={<SignUp />} />
-
-        <Route path="/login"  element={<SignIn />} />
-
+        <Route path="/login" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
         <Route
