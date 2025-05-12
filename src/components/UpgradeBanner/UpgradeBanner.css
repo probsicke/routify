@@ -1,0 +1,33 @@
+.upgrade-banner {
+  width: 100%;
+  background-color: #6ED3E8;       
+  color: #fff;                     
+  display: flex;
+  justify-content: center;          
+  align-items: center;
+  padding: 0.75rem 1rem;            
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+}
+
+.upgrade-banner__text {
+  flex: 0.5;                         
+  text-align: center;
+}
+
+.upgrade-banner__btn {
+  background-color: #fff;         
+  color: #6ED3E8;                    
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s;
+}
+
+.upgrade-banner__btn:hover {
+  background-color: #f1f1f1;
+}

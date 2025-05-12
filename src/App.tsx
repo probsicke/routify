@@ -5,12 +5,13 @@ import type { Reminder } from './types'
 import AddReminderForm from './components/AddReminderForm'
 import ReminderList from './components/ReminderList'
 import { Header } from './components/Header/Header'
+import { WeekView } from './components/WeekView/WeekView'
+import UpgradeBanner from './components/UpgradeBanner/UpgradeBanner'
 
 import { Home } from './pages/Home'
 import SignUp from './pages/SignUp/SignUp'
 import SignIn from './pages/SignIn/SignIn'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
-import { WeekView } from './components/WeekView/WeekView';
 
 function App() {
   const [reminders, setReminders] = useState<Reminder[]>(() => {
@@ -36,13 +37,16 @@ function App() {
   const deleteReminder = (id: number) =>
     setReminders(prev => prev.filter(r => r.id !== id))
 
+  const handleUpgrade = () => {
+  }
+
   return (
     <BrowserRouter>
       <Header />
+      <UpgradeBanner onUpgradeClick={handleUpgrade} />
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
