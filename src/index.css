@@ -109,3 +109,8 @@ body {
     width: 100%;
   }
 }
+
+.hero__btn:hover {
+  background-color: #5cc1e0;
+  opacity: 0.9;
+}
