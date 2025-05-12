@@ -1,0 +1,49 @@
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.text {
+  flex: 1;
+}
+
+.text h2 {
+  font-size: 2rem;
+  color: #2a3f48;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.text p {
+  font-size: 1.125rem;
+  color: #667885;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.list {
+  list-style: disc inside;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.imageWrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
