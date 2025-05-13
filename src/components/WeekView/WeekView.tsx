@@ -2,9 +2,12 @@ import { useState } from 'react'
 import { format, startOfWeek, addDays, subDays, isSameDay } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import './WeekView.css'
+import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal';
 
 export function WeekView() {
   const [currentDate, setCurrentDate] = useState(new Date())
+  const [showModal, setShowModal] = useState(false)
+  const [modalDay, setModalDay] = useState<Date | null>(null)
   const [showCompleted, setShowCompleted] = useState(true)
   const [showSubtasks, setShowSubtasks] = useState(true)
   const [projectFilter, setProjectFilter] = useState('Todos os projetos')
@@ -13,6 +16,16 @@ export function WeekView() {
   const days = Array.from({ length: 7 }).map((_, i) =>
     addDays(weekStart, i)
   )
+
+  const handleAddClick = (day: Date) => {
+    setModalDay(day)
+    setShowModal(true)
+  }
+
+  const handleSave = (data: any) => {
+    console.log('Salvando tarefa para', modalDay, data)
+    setShowModal(false)
+  }
 
   return (
     <>
@@ -85,11 +98,19 @@ export function WeekView() {
               >
                 {format(day, 'eee. dd/MM', { locale: ptBR })}
               </div>
-              <div className="add-task">Adicionar tarefa</div>
+              <button className="add-task" onClick={() => handleAddClick(day)}>
+                 Adicionar tarefa
+              </button>
             </div>
           )
         })}
       </div>
+
+      <CreateTaskModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSave={handleSave}
+      />
     </>
   )
 }

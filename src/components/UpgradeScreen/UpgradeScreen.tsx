@@ -1,5 +1,6 @@
 import './UpgradeScreen.css';
 import { Link } from 'react-router-dom';
+import './UpgradeScreen.css'
 
 const plans = [
   {
@@ -46,6 +47,9 @@ export default function UpgradeScreen() {
           Continuar no plano Free
         </Link>
       </div>
+      <footer className="upgrade-screen__footer">
+        © {new Date().getFullYear()} Routify.
+      </footer>
     </div>
   );
 }
