@@ -1,13 +1,25 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './UpgradeBanner.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./UpgradeBanner.css";
 
-interface UpgradeBannerProps {
+export interface UpgradeBannerProps {
   discount?: number;
+  onUpgradeClick?: () => void;      // ← aqui
 }
 
-const UpgradeBanner: React.FC<UpgradeBannerProps> = ({ discount = 30 }) => {
+const UpgradeBanner: React.FC<UpgradeBannerProps> = ({
+  discount = 30,
+  onUpgradeClick
+}) => {
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (onUpgradeClick) {
+      onUpgradeClick();              
+    } else {
+      navigate("/upgrade");          
+    }
+  };
 
   return (
     <div className="upgrade-banner">
@@ -16,7 +28,7 @@ const UpgradeBanner: React.FC<UpgradeBannerProps> = ({ discount = 30 }) => {
       </span>
       <button
         className="upgrade-banner__btn"
-        onClick={() => navigate('/upgrade')}
+        onClick={handleClick}
       >
         Upgrade
       </button>
@@ -25,3 +37,4 @@ const UpgradeBanner: React.FC<UpgradeBannerProps> = ({ discount = 30 }) => {
 };
 
 export default UpgradeBanner;
+
