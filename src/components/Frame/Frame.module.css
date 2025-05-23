@@ -1,0 +1,43 @@
+
+:root {
+  --routify-blue: #6ED3E8;
+}
+
+.frame {
+  position: relative;
+  background-color: var(--routify-blue);
+  padding: 3rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.frame::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 80px;
+  height: 80px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 20%, transparent 20%);
+  background-size: 10px 10px;
+}
+
+.frame::after {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 80px;
+  height: 80px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 20%, transparent 20%);
+  background-size: 10px 10px;
+  transform: rotate(180deg);
+}
+
+.screenshot {
+  max-width: 70%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

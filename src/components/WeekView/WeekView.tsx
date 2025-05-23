@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { format, startOfWeek, addDays, subDays, isSameDay } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { Inbox, Calendar, CalendarDays, RefreshCw, Settings } from 'lucide-react'
 import './WeekView.css'
-import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal';
+import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal'
 
 export function WeekView() {
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -29,20 +30,41 @@ export function WeekView() {
 
   return (
     <>
+      <div className="week-toolbar">
+        <input
+          type="text"
+          placeholder="Pesquisar..."
+          className="week-toolbar__search"
+        />
+        <div className="week-toolbar__actions">
+          <button className="toolbar-btn">
+            <Inbox size={18} />
+            <span>Entrada</span>
+          </button>
+          <button className="toolbar-btn">
+            <Calendar size={18} />
+            <span>Dia</span>
+          </button>
+          <button className="toolbar-btn">
+            <CalendarDays size={18} />
+            <span>Semana</span>
+          </button>
+          <button className="toolbar-btn">
+            <RefreshCw size={18} />
+          </button>
+          <button className="toolbar-btn">
+            <Settings size={18} />
+          </button>
+        </div>
+      </div>
+
       <header className="week-header">
         <div className="nav-buttons">
-          <button onClick={() => setCurrentDate(subDays(currentDate, 1))}>
-            ←
-          </button>
-          <button
-            className="today-btn"
-            onClick={() => setCurrentDate(new Date())}
-          >
+          <button onClick={() => setCurrentDate(subDays(currentDate, 1))}>←</button>
+          <button className="today-btn" onClick={() => setCurrentDate(new Date())}>
             Hoje
           </button>
-          <button onClick={() => setCurrentDate(addDays(currentDate, 1))}>
-            →
-          </button>
+          <button onClick={() => setCurrentDate(addDays(currentDate, 1))}>→</button>
         </div>
         <input
           type="date"
@@ -93,13 +115,12 @@ export function WeekView() {
           const isToday = isSameDay(day, currentDate)
           return (
             <div key={day.toISOString()} className="day-column">
-              <div
-                className={`day-header${isToday ? ' today' : ''}`}
-              >
+              <div className={`day-header${isToday ? ' today' : ''}`}>              
                 {format(day, 'eee. dd/MM', { locale: ptBR })}
               </div>
-              <button className="add-task" onClick={() => handleAddClick(day)}>
-                 Adicionar tarefa
+
+              <button className="add-task add-task--large" onClick={() => handleAddClick(day)}>
+                + Adicionar tarefa
               </button>
             </div>
           )
@@ -114,3 +135,5 @@ export function WeekView() {
     </>
   )
 }
+
+export default WeekView
