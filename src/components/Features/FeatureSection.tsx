@@ -11,6 +11,7 @@ export const FeatureSection: React.FC = () => (
         <br></br>
         <p>
           Gerencie suas tarefas diárias pelo celular, computador, ou até mesmo pelo WhatsApp.</p>
+          <p>Conte com a inteligência artificial do Planko para aumentar sua produtividade.</p>
       </div>
 
       <div className="feature-right">
@@ -54,7 +55,7 @@ export const FeatureSection: React.FC = () => (
           </div>
         </div>
         <button className="btn-start">
-          Comece grátis →
+          Comece grátis 
         </button>
       </div>
     </div>

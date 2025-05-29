@@ -139,7 +139,7 @@ export function CreateTaskModal({ isOpen, onClose, onSave }: CreateTaskModalProp
                   checked={type === 'Lembrete'}
                   onChange={() => setType('Lembrete')}
                 />
-                Lembrete (card menor no topo da lista)
+                Lembrete 
               </label>
             </fieldset>
           </div>
@@ -180,7 +180,7 @@ export function CreateTaskModal({ isOpen, onClose, onSave }: CreateTaskModalProp
         </div>
 
         <footer className="modal-footer">
-          <button onClick={handleSave}>Cria tarefa</button>
+          <button onClick={handleSave}>Criar tarefa</button>
         </footer>
       </div>
     </div>
