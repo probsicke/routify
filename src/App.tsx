@@ -13,6 +13,7 @@ import { Home } from './pages/Home'
 import SignUp from './pages/SignUp/SignUp'
 import SignIn from './pages/SignIn/SignIn'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
+import { ScrollToTop } from './components/ScrollToTop'
 
 function App() {
   const [reminders, setReminders] = useState<Reminder[]>(() => {
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <UpgradeBanner onUpgradeClick={handleUpgrade} />
 
